@@ -154,16 +154,13 @@ const logout = async () => {
 - Setelah logout berhasil, pengguna akan diarahkan ke halaman login menggunakan `router.push("/login")`.
 
 
-
----
-#### Nama       : Athifa Nathania  
-#### NIM        : H1D022031  
-#### Shift Baru : F
-#### Shift Lama : D
-
 ---
 # Tugas 10 - Proses CRUD Todo
-
+#### Nama       : Athifa Nathania  
+#### NIM        : H1D022031  
+#### Shift Baru : F  
+#### Shift Lama : D  
+---
 ## Deskripsi Proyek
 Aplikasi ini adalah platform manajemen tugas berbasis Ionic, Vue.js, dan Firebase Firestore. Dengan aplikasi ini, pengguna dapat melakukan autentikasi menggunakan akun Google, mengelola tugas melalui proses CRUD (Create, Read, Update, Delete), dan mengubah status tugas menjadi selesai atau aktif. Selain itu, aplikasi ini dirancang untuk memudahkan pengembang membangun file APK langsung dari VS Code dengan memanfaatkan Android SDK, tanpa memerlukan Android Studio.
 
@@ -176,67 +173,67 @@ Aplikasi ini adalah platform manajemen tugas berbasis Ionic, Vue.js, dan Firebas
 
 ## 1. Read
 ### Tampilan Daftar Tugas
-![Read](read.png)  
+<img src="read.png" alt="Read" width="300">  
 **Penjelasan:** Semua tugas yang ada diambil dari Firestore ketika halaman dimuat menggunakan fungsi `loadTodos()`. Data dibedakan menjadi dua kategori, yaitu **Active Todos** dan **Completed Todos**, berdasarkan status masing-masing tugas, yang ditampilkan menggunakan komponen IonList.
 
 ---
 
 ## 2. Create
 ### a. Membuat Tugas Baru
-![Create](create.png)  
+<img src="create.png" alt="Create" width="300">  
 **Penjelasan:** Pengguna dapat menambahkan tugas baru dengan mengisi formulir yang terdiri dari kolom **Title** dan **Description**. Tombol "+" membuka modal `InputModal` untuk memasukkan data.
 
 ### b. Konfirmasi Penambahan
-![Create - Konfirmasi](create-2.png)  
+<img src="create-2.png" alt="Konfirmasi Create" width="300">  
 **Penjelasan:** Setelah pengguna mengisi data, formulir akan mengirimkan informasi tugas baru ke Firebase melalui fungsi `handleSubmit`. Jika berhasil, akan muncul notifikasi bahwa tugas telah ditambahkan.
 
 ### c. Tampilan Daftar Setelah Penambahan
-![Create - Daftar Tugas](create-3.png)  
+<img src="create-3.png" alt="Daftar Tugas Baru" width="300">  
 **Penjelasan:** Daftar tugas diperbarui dengan menampilkan tugas baru yang telah berhasil ditambahkan.
 
 ---
 
 ## 3. Update
 ### a. Mengedit Informasi Tugas
-![Edit](edit.png)  
+<img src="edit.png" alt="Edit" width="300">  
 **Penjelasan:** Pengguna dapat memperbarui informasi tugas yang sudah ada dengan menekan tombol edit. Data yang dipilih akan ditampilkan di modal `InputModal` untuk diedit.
 
 ### b. Konfirmasi Pengeditan
-![Edit - Konfirmasi](edit-1.png)  
+<img src="edit-1.png" alt="Konfirmasi Edit" width="300">  
 **Penjelasan:** Setelah data dimasukkan, pengguna dapat menyimpan perubahan. Fungsi `firestoreService.updateTodo` digunakan untuk memperbarui data di Firestore.
 
 ### c. Tampilan Setelah Penyimpanan
-![Edit - Simpan](edit-2.png)  
+<img src="edit-2.png" alt="Simpan Edit" width="300">  
 **Penjelasan:** Setelah berhasil, daftar tugas diperbarui dengan menampilkan informasi terbaru dari tugas yang telah diubah.
 
-![Edit - Tampilan Baru](edit-3.png)  
+<img src="edit-3.png" alt="Tampilan Baru Setelah Edit" width="300">  
 **Penjelasan:** Tugas yang telah diedit ditampilkan dalam daftar dengan detail yang telah diperbarui.
 
 ---
 
 ### b. Mengubah Status Tugas
 #### Mark Complete
-![Mark Complete](mark complete.png)  
+<img src="mark complete.png" alt="Mark Complete" width="300">  
 **Penjelasan:** Tugas dapat ditandai sebagai selesai dengan menekan tombol checkmark atau menggeser item. Fungsi `firestoreService.updateStatus` akan memperbarui status tugas di Firestore.
 
-![Mark Complete - Tampilan Baru](mark complete-2.png)  
+<img src="mark complete-2.png" alt="Daftar Setelah Mark Complete" width="300">  
 **Penjelasan:** Setelah status diperbarui menjadi "completed", tugas dipindahkan ke bagian daftar tugas selesai.
 
 #### Mark Active
-![Mark Active](mark active.png)  
+<img src="mark active.png" alt="Mark Active" width="300">  
 **Penjelasan:** Tugas yang telah selesai dapat diaktifkan kembali dengan cara yang sama. Fungsi `firestoreService.updateStatus` akan mengubah status menjadi "active".
 
-![Mark Active - Tampilan Baru](mark active-2.png)  
+<img src="mark active-2.png" alt="Daftar Setelah Mark Active" width="300">  
 **Penjelasan:** Tugas yang diaktifkan kembali ditampilkan di daftar tugas aktif.
 
 ---
 
 ## 4. Delete
 ### Menghapus Tugas
-![Delete](delete.png)  
+<img src="delete.png" alt="Delete" width="300">  
 **Penjelasan:** Pengguna dapat menghapus tugas dengan menekan tombol delete atau menggeser tugas ke kiri. Fungsi `firestoreService.deleteTodo` digunakan untuk menghapus data dari Firestore.
 
-![Delete - Tampilan Baru](delete-2.png)  
+<img src="delete-2.png" alt="Daftar Setelah Delete" width="300">  
 **Penjelasan:** Setelah tugas berhasil dihapus, daftar diperbarui untuk hanya menampilkan tugas yang tersisa.
 
 ---
@@ -251,4 +248,41 @@ Aplikasi ini adalah platform manajemen tugas berbasis Ionic, Vue.js, dan Firebas
 
 ---
 
+## Build Aplikasi Ionic Menjadi APK
+### Langkah-Langkah Build APK
+1. **Persiapkan Lingkungan Build**  
+   Pastikan Anda memiliki **Node.js**, **Ionic CLI**, dan **Java Development Kit (JDK)** versi terbaru terinstal di komputer Anda. Selain itu, pastikan **Android SDK** telah dikonfigurasi.
 
+2. **Tambahkan Platform Android**  
+   Jalankan perintah berikut di terminal untuk menambahkan dukungan platform Android:
+   ```bash
+   ionic capacitor add android
+   ```
+
+3. **Build Aplikasi**
+   Buat versi release aplikasi dengan menjalankan:
+   ```bash
+   ionic build --prod
+   ```
+   Setelah build selesai, hasilnya akan disimpan dalam folder www.
+
+4. **Sinkronisasi dengan Capacitor**
+   Sinkronkan file proyek dengan Capacitor:
+   ```bash
+   ionic capacitor copy android
+   ionic capacitor sync android
+   ```
+   Buka Proyek di Android Studio
+   Jika Anda menggunakan Android Studio, buka proyek dengan perintah berikut:
+   ```bash
+   ionic capacitor open android
+   ```
+   Android Studio akan memuat proyek Android untuk konfigurasi lebih lanjut.
+   
+5. **Generate APK**
+   Di Android Studio:
+   Pilih menu Build > Build Bundle(s)/APK(s) > Build APK(s).
+   Tunggu hingga proses selesai, kemudian APK akan tersimpan di folder outputs.
+
+6. **Tes APK**
+   Salin file APK ke perangkat Android Anda atau gunakan emulator untuk menguji aplikasi.
