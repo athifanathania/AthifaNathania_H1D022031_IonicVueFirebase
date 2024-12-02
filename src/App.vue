@@ -1,6 +1,6 @@
-<!-- modifikasi src/App.vue -->
 <template>
   <ion-app>
+    <ion-router-outlet></ion-router-outlet>
     <TabsMenu v-if="showTabs" /> <!-- tambahkan baris ini -->
   </ion-app>
 </template>
