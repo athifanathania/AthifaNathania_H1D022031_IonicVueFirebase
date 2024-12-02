@@ -153,3 +153,102 @@ const logout = async () => {
 - Fungsi `signOut(auth)` akan menghapus sesi pengguna dari Firebase, sehingga pengguna tidak lagi terautentikasi. 
 - Setelah logout berhasil, pengguna akan diarahkan ke halaman login menggunakan `router.push("/login")`.
 
+
+
+---
+#### Nama       : Athifa Nathania  
+#### NIM        : H1D022031  
+#### Shift Baru : F
+#### Shift Lama : D
+
+---
+# Tugas 10 - Proses CRUD Todo
+
+## Deskripsi Proyek
+Aplikasi ini adalah platform manajemen tugas berbasis Ionic, Vue.js, dan Firebase Firestore. Dengan aplikasi ini, pengguna dapat melakukan autentikasi menggunakan akun Google, mengelola tugas melalui proses CRUD (Create, Read, Update, Delete), dan mengubah status tugas menjadi selesai atau aktif. Selain itu, aplikasi ini dirancang untuk memudahkan pengembang membangun file APK langsung dari VS Code dengan memanfaatkan Android SDK, tanpa memerlukan Android Studio.
+
+## Fitur Utama
+1. **Autentikasi Google**: Login menggunakan akun Google untuk keamanan dan kemudahan akses.
+2. **CRUD Tugas**: Menyediakan fitur untuk menambah, membaca, memperbarui, dan menghapus tugas.
+3. **Manajemen Status**: Memungkinkan pengguna menandai tugas sebagai "selesai" atau mengembalikannya ke status "aktif".
+
+---
+
+## 1. Read
+### Tampilan Daftar Tugas
+![Read](read.png)  
+**Penjelasan:** Semua tugas yang ada diambil dari Firestore ketika halaman dimuat menggunakan fungsi `loadTodos()`. Data dibedakan menjadi dua kategori, yaitu **Active Todos** dan **Completed Todos**, berdasarkan status masing-masing tugas, yang ditampilkan menggunakan komponen IonList.
+
+---
+
+## 2. Create
+### a. Membuat Tugas Baru
+![Create](create.png)  
+**Penjelasan:** Pengguna dapat menambahkan tugas baru dengan mengisi formulir yang terdiri dari kolom **Title** dan **Description**. Tombol "+" membuka modal `InputModal` untuk memasukkan data.
+
+### b. Konfirmasi Penambahan
+![Create - Konfirmasi](create-2.png)  
+**Penjelasan:** Setelah pengguna mengisi data, formulir akan mengirimkan informasi tugas baru ke Firebase melalui fungsi `handleSubmit`. Jika berhasil, akan muncul notifikasi bahwa tugas telah ditambahkan.
+
+### c. Tampilan Daftar Setelah Penambahan
+![Create - Daftar Tugas](create-3.png)  
+**Penjelasan:** Daftar tugas diperbarui dengan menampilkan tugas baru yang telah berhasil ditambahkan.
+
+---
+
+## 3. Update
+### a. Mengedit Informasi Tugas
+![Edit](edit.png)  
+**Penjelasan:** Pengguna dapat memperbarui informasi tugas yang sudah ada dengan menekan tombol edit. Data yang dipilih akan ditampilkan di modal `InputModal` untuk diedit.
+
+### b. Konfirmasi Pengeditan
+![Edit - Konfirmasi](edit-1.png)  
+**Penjelasan:** Setelah data dimasukkan, pengguna dapat menyimpan perubahan. Fungsi `firestoreService.updateTodo` digunakan untuk memperbarui data di Firestore.
+
+### c. Tampilan Setelah Penyimpanan
+![Edit - Simpan](edit-2.png)  
+**Penjelasan:** Setelah berhasil, daftar tugas diperbarui dengan menampilkan informasi terbaru dari tugas yang telah diubah.
+
+![Edit - Tampilan Baru](edit-3.png)  
+**Penjelasan:** Tugas yang telah diedit ditampilkan dalam daftar dengan detail yang telah diperbarui.
+
+---
+
+### b. Mengubah Status Tugas
+#### Mark Complete
+![Mark Complete](mark complete.png)  
+**Penjelasan:** Tugas dapat ditandai sebagai selesai dengan menekan tombol checkmark atau menggeser item. Fungsi `firestoreService.updateStatus` akan memperbarui status tugas di Firestore.
+
+![Mark Complete - Tampilan Baru](mark complete-2.png)  
+**Penjelasan:** Setelah status diperbarui menjadi "completed", tugas dipindahkan ke bagian daftar tugas selesai.
+
+#### Mark Active
+![Mark Active](mark active.png)  
+**Penjelasan:** Tugas yang telah selesai dapat diaktifkan kembali dengan cara yang sama. Fungsi `firestoreService.updateStatus` akan mengubah status menjadi "active".
+
+![Mark Active - Tampilan Baru](mark active-2.png)  
+**Penjelasan:** Tugas yang diaktifkan kembali ditampilkan di daftar tugas aktif.
+
+---
+
+## 4. Delete
+### Menghapus Tugas
+![Delete](delete.png)  
+**Penjelasan:** Pengguna dapat menghapus tugas dengan menekan tombol delete atau menggeser tugas ke kiri. Fungsi `firestoreService.deleteTodo` digunakan untuk menghapus data dari Firestore.
+
+![Delete - Tampilan Baru](delete-2.png)  
+**Penjelasan:** Setelah tugas berhasil dihapus, daftar diperbarui untuk hanya menampilkan tugas yang tersisa.
+
+---
+
+## Demo Aplikasi
+1. **Halaman Awal**: Menampilkan daftar tugas sebelum data baru ditambahkan.
+2. **Menambahkan Tugas**: Pengguna dapat menambahkan tugas baru dengan mengisi formulir.
+3. **Daftar Tugas Baru**: Setelah tugas berhasil ditambahkan, daftar diperbarui secara otomatis.
+4. **Menandai Tugas Selesai**: Tugas yang selesai dapat ditandai, dan akan dipindahkan ke daftar tugas selesai.
+5. **Mengedit Tugas**: Pengguna dapat memperbarui informasi tugas yang telah dibuat.
+6. **Menghapus Tugas**: Tugas yang tidak diperlukan lagi dapat dihapus, dan daftar akan diperbarui.
+
+---
+
+
