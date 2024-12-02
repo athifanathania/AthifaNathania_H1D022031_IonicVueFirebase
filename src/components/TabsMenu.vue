@@ -1,6 +1,6 @@
 <template>
     <ion-tabs>
-        <ion-router-outlet></ion-router-outlet>
+        <ion-router-outlet :key="$route.fullPath" :animated="false"></ion-router-outlet> <!-- Tambahkan :key -->
 
         <ion-tab-bar slot="bottom">
             <ion-tab-button tab="home" href="/home" layout="icon-top">
