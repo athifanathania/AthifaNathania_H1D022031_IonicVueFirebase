@@ -174,6 +174,7 @@ Aplikasi ini adalah platform manajemen tugas berbasis Ionic, Vue.js, dan Firebas
 ## 1. Read
 ### Tampilan Daftar Tugas
 <img src="read.png" alt="Read" width="300">  
+
 **Penjelasan:** Semua tugas yang ada diambil dari Firestore ketika halaman dimuat menggunakan fungsi `loadTodos()`. Data dibedakan menjadi dua kategori, yaitu **Active Todos** dan **Completed Todos**, berdasarkan status masing-masing tugas, yang ditampilkan menggunakan komponen IonList.
 
 ---
@@ -181,14 +182,17 @@ Aplikasi ini adalah platform manajemen tugas berbasis Ionic, Vue.js, dan Firebas
 ## 2. Create
 ### a. Membuat Tugas Baru
 <img src="create.png" alt="Create" width="300">  
+
 **Penjelasan:** Pengguna dapat menambahkan tugas baru dengan mengisi formulir yang terdiri dari kolom **Title** dan **Description**. Tombol "+" membuka modal `InputModal` untuk memasukkan data.
 
 ### b. Konfirmasi Penambahan
 <img src="create-2.png" alt="Konfirmasi Create" width="300">  
+
 **Penjelasan:** Setelah pengguna mengisi data, formulir akan mengirimkan informasi tugas baru ke Firebase melalui fungsi `handleSubmit`. Jika berhasil, akan muncul notifikasi bahwa tugas telah ditambahkan.
 
 ### c. Tampilan Daftar Setelah Penambahan
 <img src="create-3.png" alt="Daftar Tugas Baru" width="300">  
+
 **Penjelasan:** Daftar tugas diperbarui dengan menampilkan tugas baru yang telah berhasil ditambahkan.
 
 ---
@@ -196,17 +200,21 @@ Aplikasi ini adalah platform manajemen tugas berbasis Ionic, Vue.js, dan Firebas
 ## 3. Update
 ### a. Mengedit Informasi Tugas
 <img src="edit.png" alt="Edit" width="300">  
+
 **Penjelasan:** Pengguna dapat memperbarui informasi tugas yang sudah ada dengan menekan tombol edit. Data yang dipilih akan ditampilkan di modal `InputModal` untuk diedit.
 
 ### b. Konfirmasi Pengeditan
 <img src="edit-1.png" alt="Konfirmasi Edit" width="300">  
+
 **Penjelasan:** Setelah data dimasukkan, pengguna dapat menyimpan perubahan. Fungsi `firestoreService.updateTodo` digunakan untuk memperbarui data di Firestore.
 
 ### c. Tampilan Setelah Penyimpanan
 <img src="edit-2.png" alt="Simpan Edit" width="300">  
+
 **Penjelasan:** Setelah berhasil, daftar tugas diperbarui dengan menampilkan informasi terbaru dari tugas yang telah diubah.
 
 <img src="edit-3.png" alt="Tampilan Baru Setelah Edit" width="300">  
+
 **Penjelasan:** Tugas yang telah diedit ditampilkan dalam daftar dengan detail yang telah diperbarui.
 
 ---
@@ -214,16 +222,20 @@ Aplikasi ini adalah platform manajemen tugas berbasis Ionic, Vue.js, dan Firebas
 ### b. Mengubah Status Tugas
 #### Mark Complete
 <img src="mark complete.png" alt="Mark Complete" width="300">  
+
 **Penjelasan:** Tugas dapat ditandai sebagai selesai dengan menekan tombol checkmark atau menggeser item. Fungsi `firestoreService.updateStatus` akan memperbarui status tugas di Firestore.
 
 <img src="mark complete-2.png" alt="Daftar Setelah Mark Complete" width="300">  
+
 **Penjelasan:** Setelah status diperbarui menjadi "completed", tugas dipindahkan ke bagian daftar tugas selesai.
 
 #### Mark Active
 <img src="mark active.png" alt="Mark Active" width="300">  
+
 **Penjelasan:** Tugas yang telah selesai dapat diaktifkan kembali dengan cara yang sama. Fungsi `firestoreService.updateStatus` akan mengubah status menjadi "active".
 
 <img src="mark active-2.png" alt="Daftar Setelah Mark Active" width="300">  
+
 **Penjelasan:** Tugas yang diaktifkan kembali ditampilkan di daftar tugas aktif.
 
 ---
@@ -231,9 +243,11 @@ Aplikasi ini adalah platform manajemen tugas berbasis Ionic, Vue.js, dan Firebas
 ## 4. Delete
 ### Menghapus Tugas
 <img src="delete.png" alt="Delete" width="300">  
+
 **Penjelasan:** Pengguna dapat menghapus tugas dengan menekan tombol delete atau menggeser tugas ke kiri. Fungsi `firestoreService.deleteTodo` digunakan untuk menghapus data dari Firestore.
 
 <img src="delete-2.png" alt="Daftar Setelah Delete" width="300">  
+
 **Penjelasan:** Setelah tugas berhasil dihapus, daftar diperbarui untuk hanya menampilkan tugas yang tersisa.
 
 ---
